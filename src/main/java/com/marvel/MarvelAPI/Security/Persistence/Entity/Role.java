@@ -1,6 +1,6 @@
 package com.marvel.MarvelAPI.Security.Persistence.Entity;
-
-public enum RoleEnum {
-    ADMIN,
-    USER
+public enum Role {
+    USER,
+    ADMIN
 }
+

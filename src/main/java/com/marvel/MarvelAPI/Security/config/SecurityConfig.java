@@ -62,6 +62,7 @@ public class SecurityConfig {
                             http -> {
                                 // Configurar los endpoints publicos
                                 http.requestMatchers(HttpMethod.GET, "/auth/get").permitAll();
+                                http.requestMatchers(HttpMethod.GET, "/api/v1/data/**").permitAll();
                                 http.requestMatchers(HttpMethod.POST,"/register").permitAll();
                                 http.requestMatchers(HttpMethod.POST,"/login").permitAll();
 

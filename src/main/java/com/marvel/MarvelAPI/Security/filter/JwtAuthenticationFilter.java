@@ -2,6 +2,7 @@ package com.marvel.MarvelAPI.Security.filter;
 
 import com.marvel.MarvelAPI.Security.Service.JwtService;
 import com.marvel.MarvelAPI.Security.Service.UserDetailServiceImpl;
+import com.marvel.MarvelAPI.service.AuditService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -22,9 +23,12 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private final JwtService jwtService;
     private final UserDetailServiceImpl userDetailService;
 
-    public JwtAuthenticationFilter(JwtService jwtService, UserDetailServiceImpl userDetailService) {
+    private final AuditService auditService;
+
+    public JwtAuthenticationFilter(JwtService jwtService, UserDetailServiceImpl userDetailService, AuditService auditService) {
         this.jwtService = jwtService;
         this.userDetailService = userDetailService;
+        this.auditService = auditService;
     }
 
     @Override
@@ -33,6 +37,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             @NonNull HttpServletResponse response,
             @NonNull FilterChain filterChain) throws ServletException, IOException {
         String autheHeader = request.getHeader("Authorization");
+
 
         if(autheHeader == null || !autheHeader.startsWith("Bearer ")){
             filterChain.doFilter(request,response);

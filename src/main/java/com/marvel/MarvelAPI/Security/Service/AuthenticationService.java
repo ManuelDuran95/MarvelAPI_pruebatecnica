@@ -3,6 +3,7 @@ package com.marvel.MarvelAPI.Security.Service;
 import com.marvel.MarvelAPI.Security.Persistence.Entity.*;
 import com.marvel.MarvelAPI.Security.Persistence.Repository.TokenRepository;
 import com.marvel.MarvelAPI.Security.Persistence.Repository.UserRepository;
+import com.marvel.MarvelAPI.service.AuditService;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -20,12 +21,15 @@ public class AuthenticationService {
     private final AuthenticationManager authenticationManager;
 
 
+
+
     public AuthenticationService(UserRepository userRepository, PasswordEncoder passwordEncoder, JwtService jwtService, TokenRepository tokenRepository, AuthenticationManager authenticationManager) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.jwtService = jwtService;
         this.tokenRepository = tokenRepository;
         this.authenticationManager = authenticationManager;
+
     }
     public AuthenticationResponse register(UserEntity request) {
 

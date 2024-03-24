@@ -1,4 +1,4 @@
-# Nombre del Proyecto
+# Prueba Tecnica/ consumo API MARVEL
 
 ## Descripción
 
@@ -36,5 +36,7 @@ el cual hace uso de la API publica de Marvel https://developer.marvel.com/
 
 
 
+Base de datos
+CREATE DATABASE marv001;
 
 

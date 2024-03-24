@@ -26,8 +26,8 @@ public class AuditService {
         return auditUserRepository.findAll();
     }
 
-    public List<AuditUser> getAuditByUser(Integer id) {
-        return  auditUserRepository.findAllById(id);
+    public List<AuditUser> getAuditByUser(String username) {
+        return  auditUserRepository.findByUsuario(username);
     }
 
 }

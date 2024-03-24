@@ -28,15 +28,6 @@ public class DataMarvelService {
                 new HttpEntity<>(headers),
                 Object.class
         );
-        Object resp=new Object();
-        resp=response;
-        Field[] campos = resp.getClass().getFields();
-
-        // Iteramos sobre los campos y los imprimimos
-        System.out.println("\nCampos de Object:");
-        for (Field campo : campos) {
-            System.out.println(campo.getName());
-        }
 
 
         return response;

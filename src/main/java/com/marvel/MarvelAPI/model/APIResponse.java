@@ -1,18 +1,14 @@
 package com.marvel.MarvelAPI.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import lombok.Data;
 
-@lombok.Data
-@AllArgsConstructor
-@NoArgsConstructor
-@JsonIgnoreProperties(ignoreUnknown = true)
+import java.util.List;
+
+
+@Data
 public class APIResponse {
-    private int code;
-    private String status;
-    private String copyright;
-    private String attributionText;
-    private String attributionHTML;
-    private Data1 data;
+    private List<AuditUser> busquedas;
+    private String msg;
+
+
 }

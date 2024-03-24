@@ -20,7 +20,8 @@ public class AuditUserMov {
 
 
     public void guardar(String token,String busqueda){
-        String username=jwtService.extractUsername(token);
+        String tok=token.substring(7);
+        String username=jwtService.extractUsername(tok);
         AuditUser usuario=new AuditUser();
         usuario.setUsuario(username);
         usuario.setBusqueda(busqueda);

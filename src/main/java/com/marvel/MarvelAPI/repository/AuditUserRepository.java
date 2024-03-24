@@ -8,5 +8,5 @@ import java.util.List;
 public interface AuditUserRepository extends JpaRepository<AuditUser,Integer> {
 
 
-    public List<AuditUser> findAllById(Integer id);
+    List<AuditUser> findByUsuario(String  nombre);
 }

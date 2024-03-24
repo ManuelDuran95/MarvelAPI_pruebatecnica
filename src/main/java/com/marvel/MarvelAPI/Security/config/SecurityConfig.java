@@ -62,13 +62,13 @@ public class SecurityConfig {
                             http -> {
                                 // Configurar los endpoints publicos
                                 http.requestMatchers(HttpMethod.GET, "/auth/get").permitAll();
-                                http.requestMatchers(HttpMethod.GET, "/api/v1/marveldata/**").permitAll();
                                 http.requestMatchers(HttpMethod.POST,"/register").permitAll();
                                 http.requestMatchers(HttpMethod.POST,"/login").permitAll();
 
 
-                                // Cofnigurar los endpoints privados
-                                http.requestMatchers(HttpMethod.GET, "/auth/admin_only").hasAuthority("ADMIN");
+                                // Cofnigurar los endpoints privados, solo ROLE_ADMIN
+                                http.requestMatchers(HttpMethod.GET, "/admin/data/**").hasAuthority("ADMIN");
+
 
 
                                 // Configurar el resto de endpoint - NO ESPECIFICADOS

@@ -1,0 +1,171 @@
+{
+  "info": {
+    "_postman_id": "6313154d-a174-45dd-82da-696b14cb2e5a",
+    "name": "APIMARVEL",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "19429996"
+  },
+  "item": [
+    {
+      "name": "registro",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"firstName\":\"Usario NOmbre\",\r\n    \"lastName\":\"Usuario APellido\",\r\n    \"username\":\"usuriotest01\",\r\n    \"password\":\"123456\"\r\n   \r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8082/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\":\"usuriotest01\",\r\n    \"password\":\"123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8082/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "BuscarPor Nombre",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYW51ZWwxMjIzIiwiaWF0IjoxNzExMjU3ODg1LCJleHAiOjE3MTEzNDQyODV9.rzO3xNMlJipHWCfmhFP62GIrPPqks8oNvPIcg8nsYyMfX4VB5ecsbpz5CMUcXvVV",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYW51ZWwxMiIsImlhdCI6MTcxMTIyOTc1OCwiZXhwIjoxNzExMzE2MTU4fQ.4TX3tgSq0l_l-_rohs8Aqd4uj4EhMROuQKoWHvu3O-17cw0V5TVDzHaW6BzcR_ki",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8082/api/v1/marveldata/getbyname/sabra",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "api",
+            "v1",
+            "marveldata",
+            "getbyname",
+            "sabra"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get busquedas por nombre de usuario",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYW51ZWwxMiIsImlhdCI6MTcxMTI1NzgyMSwiZXhwIjoxNzExMzQ0MjIxfQ.bqmRnMFAa-Tw7JZI3XzYp4mcbb3DjKSLybEb5BiFVg0P4TEW50WOMa02G2W3DOQ4",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8082/admin/data/getbynombreusuario/manuel1223",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "admin",
+            "data",
+            "getbynombreusuario",
+            "manuel1223"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "por nombre de serie",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJtYW51ZWwxMiIsImlhdCI6MTcxMTI1NzM3NSwiZXhwIjoxNzExMzQzNzc1fQ.aLA29oQbJSKeVyjf_zYJaLETN1FHvx6iWJ-Bf3TKROkueBiPxYz6YPnBa_N5QFVB",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8082/api/v1/marveldata/getbyserie/{nombreserie}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "api",
+            "v1",
+            "marveldata",
+            "getbyserie",
+            "{nombreserie}"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

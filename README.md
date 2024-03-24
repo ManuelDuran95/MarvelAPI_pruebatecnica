@@ -32,11 +32,30 @@ el cual hace uso de la API publica de Marvel https://developer.marvel.com/
 1. Clona este repositorio: `git clone https://github.com/ManuelDuran95/MarvelAPI_pruebatecnica`
 2. Importa el proyecto en al IDE favorito(Se sugiere el uso de IntelliJ IDEA).
 3. Configura la conexión a la base de datos en el archivo `application.properties`.
-4. Ejecuta la aplicación: `mvn spring-boot:run` o ejecútalo desde el IDE.
+4. Ejecuta la aplicación: `mvn spring-boot:run` o ejecutar desde el IDE.
 
 
 
-Base de datos
+1. Base de datos
 CREATE DATABASE marv001;
+2. registrar un usuario
+   http://localhost:8082/register
+payload
+   {
+   "firstName":"Usuario Nombre",
+   "lastName":"Usuario Apellido",
+   "username":"usuariotest01",
+   "password":"123456"
+}
+3. Agregar token en el header
+
+para crear usuario ADMIN
+registrar usuario normal
+y luego ejecutar
+
+UPDATE dbname.users  SET role = 'ADMIN' WHERE id = userID;
+
+
+Exportar la configuracion de PostMan con el archivo export_postman.json
 
 

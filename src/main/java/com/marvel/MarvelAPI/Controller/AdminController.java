@@ -30,7 +30,7 @@ public class AdminController {
         return new ResponseEntity<>(res, HttpStatus.OK) ;
 
     }
-    @GetMapping("/getbyid/{username}")
+    @GetMapping("/getbynombreusuario/{username}")
     public ResponseEntity<APIResponse> getAllBusquedasById(@PathVariable("username") String username){
         auditService.getAuditoria();
         APIResponse res=new APIResponse();

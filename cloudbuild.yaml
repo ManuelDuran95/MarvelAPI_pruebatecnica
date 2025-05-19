@@ -6,11 +6,11 @@ steps:
 
   # Build the container image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/my-api/$_SERVICE_NAME:$COMMIT_SHA', '.']
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/my-api/$_SERVICE_NAME:$COMMIT_SHA', '.']
 
   # Push the container image to Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us-central1-docker.pkg.dev/$PROJECT_ID/my-api/$_SERVICE_NAME:$COMMIT_SHA']
+    args: ['push', 'gcr.io/$PROJECT_ID/my-api/$_SERVICE_NAME:$COMMIT_SHA']
   - name: "bash"
     script: echo "I am running in a private pool! v2"
   # Deploy the container image to Cloud Run
